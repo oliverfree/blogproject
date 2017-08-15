@@ -25,7 +25,7 @@ SECRET_KEY = 'xc3vpfq@3v0+puxv9c37b4(8@)vd4l976dhi82((t*a93r%=0_'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['127.0.0.1', 'localhost ', '119.23.227.172']
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost ', '119.23.227.172','.doraemon.red']
 
 
 # Application definition
