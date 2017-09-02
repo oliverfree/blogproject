@@ -35,7 +35,8 @@ class Post(models.Model):
     category = models.ForeignKey(Category)
     tags = models.ManyToManyField(Tag, blank=True)
     author = models.ForeignKey(User)
-
+    favour=models.PositiveIntegerField(default=0)
+    
     def __str__(self):
         return self.title
 
