@@ -12,8 +12,4 @@ urlpatterns = [
 #     url(r'^search/$', views.search, name='search'),
     url(r'^search/$', views.search, name='search'),
     url(r'^add_favour/$',views.add_favour,name='add_favour')
-<<<<<<< HEAD
 ]
-=======
-]
->>>>>>> 26f92de4ce7d3f96920a6883c74757fe5822523b
