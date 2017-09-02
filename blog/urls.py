@@ -11,4 +11,5 @@ urlpatterns = [
     url(r'^tag/(?P<pk>[0-9]+)/$', views.TagView.as_view(), name='tag'),
 #     url(r'^search/$', views.search, name='search'),
     url(r'^search/$', views.search, name='search'),
+    url(r'^add_favour/$',views.add_favour,name='add_favour')
 ]
