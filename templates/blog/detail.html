@@ -40,7 +40,7 @@ $.ajax({
                     <a href="{{ post.get_absolute_url }}#comment-area">{{ post.comment_set.count }} 评论</a></span>
                 <span class="views-count"><a href="#">{{ post.views }} 阅读</a></span>
                 <span class="views-count"><a href="#"><div id="myDiv" style="display: inline;">{{ post.favour }}</div> 赞</a></span>
-                <span class="views-count"><input type="button" id="favour_button" value="点赞"/></span>
+                <span class="views-count"><input type="button" id="favour_button" style="background-color: #7ED321;color: #FFFFFF" value="点赞"/></span>
             </div>
         </header>
         <div class="entry-content clearfix">
