@@ -1,6 +1,32 @@
+
 {% extends 'base.html' %}
 
 {% block main %}
+
+<script>
+$(document).ready(function(){
+$("#favour_button").click(function(){
+var pk={{ post.pk|safe }};
+$.ajax({
+    type: "POST",
+    url: "/add_favour/",
+    data:　{
+        "select_pk": JSON.stringify(pk)
+    },
+    success: function(p_data,status){
+        var added_favour=p_data.toString();
+        $("#myDiv").html(added_favour);
+        console.log("Ajax add favour success!");
+    },
+    error: function () {
+        alert("Ajax add favour false!");
+    }
+      });
+      
+});
+
+});
+</script>
     <article class="post post-{{ post.pk }}">
         <header class="entry-header">
             <h1 class="entry-title">{{ post.title }}</h1>
@@ -13,6 +39,8 @@
                 <span class="comments-link">
                     <a href="{{ post.get_absolute_url }}#comment-area">{{ post.comment_set.count }} 评论</a></span>
                 <span class="views-count"><a href="#">{{ post.views }} 阅读</a></span>
+                <span class="views-count"><a href="#"><div id="myDiv" style="display: inline;">{{ post.favour }}</div> 赞</a></span>
+                <span class="views-count"><input type="button" id="favour_button" value="点赞"/></span>
             </div>
         </header>
         <div class="entry-content clearfix">

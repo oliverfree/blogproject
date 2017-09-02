@@ -9,8 +9,22 @@ from django.views.generic import ListView, DetailView
 from django.utils.text import slugify
 from markdown.extensions.toc import TocExtension
 from django.db.models import Q
+from django.views.decorators.csrf import csrf_exempt
+from django.http import HttpResponse
 # Create your views here.
 
+
+@csrf_exempt
+def add_favour(request):
+    import json
+    if request.method =='POST':
+        select_pk=eval(request.POST.get('select_pk'))
+        select_post= Post.objects.get(pk=select_pk)
+        favour_=select_post.favour+1
+        select_post.favour=favour_
+        select_post.save()
+        
+    return HttpResponse(json.dumps(favour_))
 
 def index(request):
     post_list=Post.objects.all().order_by('-created_time')
